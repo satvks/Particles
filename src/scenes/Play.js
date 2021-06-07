@@ -109,7 +109,12 @@ class Play extends Phaser.Scene {
             maxKeyDelay: 0
         }); 
         this.input.keyboard.on('keycombomatch', function(event) {
+            this.cracked3.alpha = 0;
+            this.hatched.alpha = 1;
+            this.smallCrack.pause();
             eggHatched = true;
+            let wormBirth = this.add.sprite(this.egg.x - 8, this.egg.y / 1.5, 'launch').setOrigin(0, 0);
+            wormBirth.anims.play('pow');
             console.log("Quick time event complete!");
         });
 
@@ -211,7 +216,7 @@ class Play extends Phaser.Scene {
     buttonPrompt(letters, anim) {
         let val = letters.current;
         let pressThis;
-
+        
         // check the current keycode of the array and play appropriate animation to prompt the 
         // player wich button to press
         if(letters.current == 65) {
