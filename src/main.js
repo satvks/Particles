@@ -12,6 +12,6 @@ let game =  new Phaser.Game(config);
 let eggHatched;
 let eggEaten;
 let hatchProgress = 0;
-let keySPACE;
 let keyW, keyA, keyS, keyD;
 let quickButtons = [];
+let animPlaying = false;
